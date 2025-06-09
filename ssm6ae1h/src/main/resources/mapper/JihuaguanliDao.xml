@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.JihuaguanliDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.JihuaguanliEntity" id="jihuaguanliMap">
+        <result property="jihuamingcheng" column="jihuamingcheng"/>
+        <result property="cailiaoshiyongliang" column="cailiaoshiyongliang"/>
+        <result property="kaishishijian" column="kaishishijian"/>
+        <result property="jieshushijian" column="jieshushijian"/>
+        <result property="shishirenyuan" column="shishirenyuan"/>
+        <result property="xingming" column="xingming"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.JihuaguanliVO" >
+		SELECT * FROM jihuaguanli  jihuaguanli         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.JihuaguanliVO" >
+		SELECT  jihuaguanli.* FROM jihuaguanli  jihuaguanli
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.JihuaguanliView" >
+
+		SELECT  jihuaguanli.* FROM jihuaguanli  jihuaguanli 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.JihuaguanliView" >
+		SELECT * FROM jihuaguanli  jihuaguanli <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	
+</mapper>
